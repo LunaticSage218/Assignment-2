@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project demonstrates extending the Godot 4 `Sprite2D` node using **GDExtension in C++**. The custom node `Pseudo3DRotatingSprite` introduces new features not available in the default Sprite2D node, including:
+This project demonstrates extending the Godot 4 `Sprite2D` node using **GDExtension in C++**. The custom node `Pseudo3DRotatingSprite` introduces new features including:
 
 - **Pseudo-3D rotation** with squish effect
 - **Fade-in and fade-out animation**
