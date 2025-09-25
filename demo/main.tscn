@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfohf4cu4p0hq"]
+
+[ext_resource type="Script" uid="uid://byw0316pctr3x" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://gmr6gsvw6xys" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dowf3djtpm3m5" path="res://rotator_1.gd" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://b0hamx6wn745m" path="res://rotator_2.gd" id="3_1bvp3"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0xm2m")
+
+[node name="Rotator1" type="Pseudo3DRotatingSprite" parent="."]
+rotation_speed = 5.0
+position = Vector2(811, 317)
+texture = ExtResource("1_ig7tw")
+script = ExtResource("2_h2yge")
+next_rotator = NodePath("../Rotator2")
+
+[node name="Rotator2" type="Pseudo3DRotatingSprite" parent="."]
+rotation_speed = 5.0
+position = Vector2(349, 317)
+texture = ExtResource("1_ig7tw")
+script = ExtResource("3_1bvp3")
+next_rotator = NodePath("../Rotator1")
+
+[connection signal="rotation_completed" from="Rotator1" to="Rotator1" method="_on_rotation_completed"]
+[connection signal="rotation_completed" from="Rotator2" to="Rotator2" method="_on_rotation_completed"]
